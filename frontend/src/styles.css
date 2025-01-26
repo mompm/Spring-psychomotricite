@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Assure que le fond couvre tout l'écran */
+    /*background-image: url('/assets/wallpaper.png'); /* Chemin vers l'image */
+    background-color: #F6F4E8;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
