@@ -1,0 +1,72 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // Permet de séparer le logo des onglets
+    background-color: #E5E2D1;
+    padding: 2rem;
+  
+    &-logo img {
+      width: 200px; // Ajustez la taille selon vos besoins
+      height: auto;
+    }
+  
+    &-menu {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-end; // Aligne les onglets vers la droite
+      flex-grow: 1; // Prend l'espace disponible pour pousser les onglets vers la droite
+  
+      li {
+        position: relative;
+  
+        a {
+          text-decoration: none;
+          color: #333;
+          font-weight: bold;
+          &:hover {
+            color: #007bff;
+          }
+        }
+  
+        &.dropdown {
+          .dropdown-toggle {
+            cursor: pointer;
+          }
+  
+          .dropdown-menu {
+            display: none; // Caché par défaut
+            position: absolute;
+            top: 150%; // Positionne le menu légèrement en dessous de l'onglet parent
+            right: 0; // Aligne le menu déroulant à droite
+            left: auto; // Réinitialise toute position gauche
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 0.25rem;
+            padding: 0.5rem 0;
+            list-style: none;
+            min-width: 200px;
+  
+            &.visible {
+              display: block; // Affiché lorsque la classe visible est appliquée
+            }
+  
+            li {
+              a {
+                padding: 0.5rem 1rem;
+                display: block;
+                color: #333;
+                &:hover {
+                  background-color: #007bff;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
