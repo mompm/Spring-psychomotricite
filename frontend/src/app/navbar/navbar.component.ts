@@ -7,10 +7,11 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-    isDropdownVisible: boolean = false; // Variable pour gérer la visibilité du menu déroulant
+    activeDropdown: string | null = null; // Gère quel menu déroulant est actif
 
-    toggleDropdown(): void {
-      this.isDropdownVisible = !this.isDropdownVisible; // Basculer l'état
+    toggleDropdown(menu: string): void {
+      // Si le menu cliqué est déjà actif, on le ferme, sinon on l'ouvre
+      this.activeDropdown = this.activeDropdown === menu ? null : menu;
     }
   
     // Événement global pour fermer le menu si on clique en dehors
@@ -18,12 +19,12 @@ export class NavbarComponent {
     closeDropdown(event: Event): void {
       const target = event.target as HTMLElement;
   
-      // Vérifie si l'utilisateur clique en dehors du bouton "Plus" ou du menu
+      // Vérifie si le clic est en dehors des menus déroulants et du bouton "Plus"
       const isClickInsideMenu = target.closest('.dropdown-menu');
       const isClickOnToggle = target.closest('.dropdown-toggle');
   
       if (!isClickInsideMenu && !isClickOnToggle) {
-        this.isDropdownVisible = false;
+        this.activeDropdown = null; // Réinitialise le menu actif
       }
     }
   }

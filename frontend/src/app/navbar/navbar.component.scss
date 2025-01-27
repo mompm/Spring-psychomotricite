@@ -1,12 +1,12 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; // Permet de séparer le logo des onglets
+    justify-content: space-between;
     background-color: #E5E2D1;
     padding: 2rem;
   
     &-logo img {
-      width: 200px; // Ajustez la taille selon vos besoins
+      width: 200px;
       height: auto;
     }
   
@@ -16,8 +16,8 @@
       gap: 2rem;
       margin: 0;
       padding: 0;
-      justify-content: flex-end; // Aligne les onglets vers la droite
-      flex-grow: 1; // Prend l'espace disponible pour pousser les onglets vers la droite
+      justify-content: flex-end;
+      flex-grow: 1;
   
       li {
         position: relative;
@@ -37,11 +37,10 @@
           }
   
           .dropdown-menu {
-            display: none; // Caché par défaut
+            display: none;
             position: absolute;
-            top: 150%; // Positionne le menu légèrement en dessous de l'onglet parent
-            right: 0; // Aligne le menu déroulant à droite
-            left: auto; // Réinitialise toute position gauche
+            top: 150%; // Positionne le menu déroulant légèrement plus bas
+            right: 0;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 0.25rem;
@@ -50,7 +49,7 @@
             min-width: 200px;
   
             &.visible {
-              display: block; // Affiché lorsque la classe visible est appliquée
+              display: block; // Affiche le menu déroulant lorsqu'il est actif
             }
   
             li {

@@ -1,23 +1,41 @@
 <nav class="navbar">
     <div class="navbar-logo">
-      <img src='/assets/logoNavbar2.png' alt="Logo" />
+      <img src="/assets/logoNavbar2.png" alt="Logo" />
     </div>
     <ul class="navbar-menu">
       <li><a>Accueil</a></li>
-      <li><a>Présentation de la psychomotricité</a></li>
-      <li><a >Examen psychomoteur</a></li>
+      
       <li class="dropdown">
-        <!-- Ajout du (click) pour basculer la visibilité -->
-        <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown()">Plus</a>
-        <!-- Le menu est visible en fonction de isDropdownVisible -->
-        <ul class="dropdown-menu" [class.visible]="isDropdownVisible">
-          <li><a href="#aides">Les aides financières</a></li>
-          <li><a>Modalité des séances</a></li>
-          <li><a>Graphomotricité</a></li>
+        <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('activities')">Découvrir nos activités</a>
+        <ul class="dropdown-menu" [class.visible]="activeDropdown === 'activities'">
+          <li><a>La psychomotricité</a></li>
+          <li><a>La graphomotricité</a></li>
           <li><a>La relaxation</a></li>
-          <li><a>Plan d'accès</a></li>
-          <li><a>Qui je suis ?</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('consultations')">Consultations</a>
+        <ul class="dropdown-menu" [class.visible]="activeDropdown === 'consultations'">
+          <li><a>Examens psychomoteurs</a></li>
+          <li><a>Modalité de la séance</a></li>
           <li><a>Attente</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('practical-info')">Infos pratiques</a>
+        <ul class="dropdown-menu" [class.visible]="activeDropdown === 'practical-info'">
+          <li><a>Les aides financières</a></li>
+          <li><a>Plan d'accès</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('about-us')">Qui sommes-nous ?</a>
+        <ul class="dropdown-menu" [class.visible]="activeDropdown === 'about-us'">
+          <li><a>Présentation</a></li>
+          <li><a>Contact</a></li>
         </ul>
       </li>
     </ul>
