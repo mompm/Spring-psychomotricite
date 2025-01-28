@@ -26,9 +26,18 @@
           text-decoration: none;
           color: #333;
           font-weight: bold;
+          display: flex;
+          align-items: center; // Centre le texte et l'icône verticalement
+          gap: 0.5rem; // Espace entre le texte et l'icône
+  
           &:hover {
             color: #007bff;
           }
+        }
+  
+        .dropdown-icon {
+          width: 12px; // Taille de l'icône
+          height: 12px;
         }
   
         &.dropdown {
@@ -39,8 +48,9 @@
           .dropdown-menu {
             display: none;
             position: absolute;
-            top: 150%; // Positionne le menu déroulant légèrement plus bas
+            top: 110%;
             right: 0;
+            left: auto;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 0.25rem;
@@ -49,7 +59,7 @@
             min-width: 200px;
   
             &.visible {
-              display: block; // Affiche le menu déroulant lorsqu'il est actif
+              display: block;
             }
   
             li {
