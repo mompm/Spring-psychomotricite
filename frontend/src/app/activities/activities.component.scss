@@ -1,0 +1,91 @@
+// 🎨 Bannière principale
+.activites-banner {
+    background-color: #BACEC1;
+    text-align: center;
+    padding: 3rem;
+    
+    h1 {
+      font-size: 2.5rem;
+      color: #1D3124;
+    }
+  }
+  
+  // 📌 Sections d'activités
+  .activite-section {
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    background-color: #F6F4E8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  // 🔹 Titres des sections
+  .section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  
+    h2 {
+      font-size: 2rem;
+      color: #1D3124;
+      border-bottom: 3px solid #E59560;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+  }
+  
+  // 📜 Contenu des sections
+  .section-content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  // 🖊️ Mise en page des sous-sections
+  .relaxation-box {
+    background-color: #E59560;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  // 📱 Responsive design
+  @media (max-width: 768px) {
+    .relaxation-box {
+      width: 90%;
+      margin: 1rem auto;
+    }
+  }
+
+  // 📌 Section Graphomotricité
+.graphomotricite-box {
+    background-color: #E59560;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: left;
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    h4 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+  
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+  }
+  
+  // 📱 Responsive design
+  @media (max-width: 768px) {
+    .graphomotricite-box {
+      width: 100%;
+      margin: 1rem auto;
+    }
+  }
+  

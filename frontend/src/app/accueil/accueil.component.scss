@@ -1,176 +1,215 @@
+
+/* style de la bannière presentation du cabinet */ 
 .banner {
   background-color: #BACEC1; // Couleur verte pour la bannière
-  padding: 3rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px; // Ajustez la hauteur selon vos besoins
+  padding: 3.5rem 2.5rem; // Espacement intérieur de la bannière
+  display: flex; // Affichage en flexbox pour organiser les éléments
+  justify-content: center; // Centrage horizontal du contenu
+  align-items: center; // Alignement vertical au centre
+  height: 300px; // hauteur de la bannière
 }
 
+/*Contenu de la bannière */
 .banner-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  max-width: 1200px;
+  display: flex; // Affichage en flexbox pour organiser les éléments
+  align-items: center; // Alignement vertical au centre
+  justify-content: space-between; // Répartition égale du texte et de l'image
+  width: 100%; // Largeur du contenu de la bannière
+  max-width: 1200px; // Empêche la bannière d’être trop large sur grands écrans
+
+  @media (max-width: 768px) {
+    gap: 1rem; // Réduit l'espacement entre le texte et l'image
+    justify-content: center; // Recentre les éléments si nécessaire
+  }
 }
 
+/* Zone de texte dans la bannière*/
 .text-content {
-  flex: 1;
-  color: #333;
-  padding: 1rem;
-  max-width: 50%;
+  flex: 1; // Permet au texte de prendre 50% de l’espace
+  color: #333; // Couleur du texte (gris foncé)
+  padding: 1rem; // Espacement intérieur du texte
+  max-width: 50%; // Empêche le texte de trop s'étendre
 
+  /* ajoute de contrainte pour <h1> dans text-content */
   h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);// Taille du titre
+    margin-bottom: 0.8rem; // Espacement sous le titre
   }
 
+  /* ajoute de contrainte pour <p>  dans text-content */
   p {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1.6vw, 1.2rem); // Taille du paragraphe
+    line-height: 1.4; // Assure une bonne lisibilité
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%; // Sur mobile, le texte prend toute la largeur
+    margin-left: -1rem;
+    text-align: center; // Centre le texte pour un meilleur rendu
   }
 }
 
 .image-content {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.rounded-image {
-  width: 500px; // Ajustez la taille de l'image
-  height: auto;
-  border-radius: 20px; // Bord arrondi
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ajoute une légère ombre
-}
-
-
-/* 📌 Section contenant les blocs */
-.info-section {
+    flex: 1;
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 3rem;
-    width: 85%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: flex-end;
   
+    img {
+       width: clamp(200px, 25vw, 500px);// Taille de l'image réduite mais adaptable
+      height: auto; // Respecte les proportions de l'image
+      border-radius: 20px; // Maintient les coins arrondis
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ajoute une légère ombre pour le relief
+    }
+  
+    @media (max-width: 768px) {
+      justify-content: center; // Centre l'image sur les petits écrans
+      margin-left: -1rem;
+      img {
+        width: 200px; // Réduit encore plus l'image sur mobile
+      }
+    }
+  }
+
+/* Section contenant les blocs horraire et localisation */
+.info-section {
+    display: flex; // Active flexbox pour aligner les blocs horizontalement
+    justify-content: center; // Centrage horizontal des blocs
+    gap: 2rem; // Espacement entre les blocs
+    margin-top: 3rem; // Espacement par rapport à la banniere
+    width: 85%; // Largeur de la section
+    max-width: 1200px; // Largeur maximale pour éviter un affichage trop large
+    margin-left: auto; // Centrage horizontal a gauche
+    margin-right: auto; // Centrage horizontal à droite
+  
+    /*change celon la taille de l'ecran */
     @media (max-width: 1024px) {
-      flex-direction: column; // Passe en colonne sur tablette/mobile
-      gap: 1.5rem;
+      flex-direction: column; // Passe en colonne 
+      gap: 1.5rem; // Espacement entre les blocs
     }
   }
   
-  /* 🎨 Style des blocs */
+   /* Style des blocs */ 
   .info-box {
-    flex: 1;
-    padding: 2.5rem;
-    border-radius: 20px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 350px; // Assure une hauteur équilibrée
+    flex: 1; // Permet au texte de prendre 50% de lespace
+    padding: 2.5rem; // Espacement intérieur des blocs
+    border-radius: 20px; // Arrondi des bords des blocs
+    color: white; // Texte en blanc pour contraste
+    text-align: center; // Centre le texte
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ajoute une ombre légère
+    min-height: 350px; // Hauteur minimale pour équilibrer les deux blocs
   
+    /* ajoute de contrainte pour <h2> */
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      text-align: center;
+      font-size: 1.8rem; // Taille du titre des blocs
+      margin-bottom: 1rem; // Espacement sous le titre
+      text-align: center; // centrer le titre
     }
   
+    /*  contenu des blocs */
     .info-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      display: flex; // Affichage en flexbox pour organiser les éléments
+      flex-direction: column; // mettre le contenus en colone
+      align-items: center; //Centre tous les éléments horizontalement
+      text-align: center; // Texte centré dans le bloc 
     }
   
+    /* ajoute de contrainte pour <ul> */
     ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-  
+      list-style: none; // Supprime les puces des listes
+      padding: 0; // Supprime le padding 
+      margin: 0; // supprime la marge
+
+      /* ajoute de contrainte pour <li> */
       li {
-        font-size: 1.2rem;
-        padding: 0.5rem 0;
+        font-size: 1.2rem; // Taille du texte des éléments de liste
+        padding: 0.5rem 0; // Espacement vertical entre les éléments
       }
     }
-  
+    
+    /* icone telephone  */
     .phone {
-      margin-top: 1rem;
-      font-size: 1.3rem;
-      font-weight: bold;
+      margin-top: 1rem; // Espacement au-dessus
+      font-size: 1.3rem; // taille du texte
+      font-weight: bold; // mettre le texte en gras
     }
   
-    /* ✅ Ajout d'un encart supplémentaire pour équilibrer */
+    /* encart supplémentaire */
     .extra-info {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-      font-size: 1.1rem;
-      text-align: center;
+      margin-top: 2rem; // Espacement au-dessus
+      padding: 1rem; // Espacement intérieur
+      background: rgba(255, 255, 255, 0.2); //Fond legerement transparent
+      border-radius: 10px; //Arrondi des bords
+      font-size: 1.1rem; // taille du texte
+      text-align: center; // centrer le texte 
     }
   }
   
   /* Bloc Horaires */
   .horaires {
-    background-color: #E59560;
+    background-color: #E59560; // fond orange
   }
   
   /* Bloc Localisation */
   .location {
-    background-color: #1D3124;
-    text-align: left;
-    padding: 2.5rem;
+    background-color: #1D3124; // fond vert
+    text-align: left; // placer le texte à gauche
+    padding: 2.5rem; // Espacement interieur
   
+  /* ajoute de contrainte pour <p> */
     p {
-      text-align: justify;
-      font-size: 1.1rem;
+      text-align: justify; // Justifie le texte pour un alignement propre
+      font-size: 1.1rem; //taille du texte
       max-width: 90%; // Réduit la largeur du texte pour éviter un bloc trop large
     }
   
+    /* liste dans le bloc localisation*/
     .location-list {
-        margin: 1rem 0;
-        padding-left: 0;
+        margin: 1rem 0; // espacement autour de la liste
+        padding-left: 0; // Supprime l indentation par défaut des listes
       
+      /* ajoute de contrainte pour <li> */
         li {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem; /* Espace entre l’icône et le texte */
-          font-size: 1.2rem;
-          margin-bottom: 0.5rem;
-          white-space: nowrap; /* Empêche les sauts de ligne sur les mots */
+          display: flex; // Affichage en flexbox pour organiser les éléments
+          align-items: center; // centrer les elements
+          gap: 0.8rem; // Espace entre l’icône et le texte 
+          font-size: 1.2rem; // taille du texte
+          margin-bottom: 0.5rem; // espacement en bas
+          white-space: nowrap; // Empêche les sauts de ligne sur les mots 
       
+          /* icone dun point dans la liste*/
           .icon {
-            flex-shrink: 0; /* Empêche l'icône de se redimensionner */
-            font-size: 1.4rem;
+            flex-shrink: 0; /* Empeche l icone de se redimensionner */
+            font-size: 1.4rem; // taille du texte
           }
       
+          /* temps d un  point dans la liste*/
           .time {
-            font-weight: bold;
-            flex-shrink: 0; /* Garde le temps aligné */
+            font-weight: bold; // mettre le texte en gras
+            flex-shrink: 0; /* Garde le temps aligne */
           }
       
+          /* description d un point dans la liste*/
           .description {
             flex-grow: 1; /* Permet au texte de s'étendre pour éviter les sauts */
-            text-align: left;
+            text-align: left; // placer sur la gauche
           }
         }
     }
 
+    /* lien google map*/
     .map-link {
-        display: block;
-        text-align: center;
-        color: #E59560;
-        font-weight: bold;
-        text-decoration: none;
-        margin-top: 1rem;
-        transition: color 0.3s ease;
+        display: block;  // Affiche le lien sous forme de bloc
+        text-align: center; // centrer le texte
+        color: #E59560; // couleur orange
+        font-weight: bold; // mettre en gras 
+        text-decoration: none; // Supprime le soulignement du lien
+        margin-top: 1rem; // espacement au dessus du lien 
+        transition: color 0.3s ease; // Ajoute un effet de transition fluide
     
+        /* survol du lien google map*/
         &:hover {
-          color: #FFC107;
-          text-decoration: underline;
+          color: #FFC107; // Change la couleur du lien au survol
+          text-decoration: underline; // Ajoute un soulignement au survol
         }
       }
     }
